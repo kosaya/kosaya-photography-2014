@@ -1,0 +1,30 @@
+#branding-navigation {
+	position: relative;
+	left: auto;
+	top: auto;
+	text-align: center;
+	bottom: 0;
+	z-index: 10;
+}
+	#main-navigation li {
+		text-align: center;
+		border-bottom: 7px solid #fff;
+	}
+
+body section#top-slideshow {
+	min-width: none !important;
+}
+	
+.content {
+	margin-left: auto !important;
+	margin: auto !important;
+}
+
+.full, .five-sixth, .two-third, .half, .third, .sixth {
+	width: 90%;
+	padding: 5%;
+}
+
+.image {
+	text-align: center;
+}

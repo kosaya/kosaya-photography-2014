@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Kosaya Photography -- Food, Nature & Lifestyle</title>
+	
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic' rel='stylesheet' type='text/css'/>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
+	
+	<meta name="viewport" content="width=device-width, user-scalable=no"/>
+	
+	<style>
+	/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+		html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+	
+	/*-----------Globals-------------*/
+		body {
+			background: #fff;
+			line-height: 1;
+			font-family: 'Roboto', sans-serif;
+			font-weight: 300;
+		}
+		
+		h1, h2, h3, h4, h5, h6 {
+			text-transform: uppercase;
+			font-weight: 400;
+			font-family: 'Playfair Display', serif;
+			letter-spacing: 1px;
+			line-height: 1em;
+		}
+			h2 {
+				font-size: 2em;
+			}
+			h3 {
+				font-size: 1.3em;
+				margin-bottom: 1em;
+			}
+		
+		p, address {
+			margin-top: 0.5em;
+			line-height: 1.7em;
+			margin-bottom: 0.5em;
+		}
+		
+		a {
+			text-decoration: none;
+			color: #5fd35f;
+		}
+		
+		hr {
+			background: black;
+			height: 1px;
+			border: 0;
+			margin: 1em;
+		}
+		
+		small {
+			display: block;
+			clear: both;
+		}
+		
+		img {
+			max-width: 100%;
+			width: auto;
+			height: auto;
+		}
+		
+		label {
+			clear: both;
+			display: block;
+			padding: 0.5em 0;
+		}
+		
+		input, textarea {
+			width: 100%;
+			padding: 1em;
+			border: 1px solid #ccc;
+		}
+			textarea {
+				width: 90%;
+				min-height: 150px;
+			}
+		
+			.buttonlink {
+				text-align: center;
+			}
+		
+			input[type="submit"], .buttonlink {
+				padding: 1em;
+				border: 0;
+				display: block;
+				margin: auto;
+				font-family: 'Playfair Display', serif;
+				text-transform: uppercase;
+				font-size: 1em;
+				background: white;
+				cursor: pointer;
+			}
+				input[type="submit"]:hover, .buttonlink:hover {
+					color: white;
+					background-color: #5fd35f;
+				}
+		
+	/*-----------Layout Styles-------*/
+  	
+  	.container {
+  		max-width: 60em;
+  		margin: auto;
+  	}
+  		.container:after {
+  			content: "";
+  			display: table-cell;
+  			clear: both;
+  		}
+	
+	.full, .five-sixth, .two-third, .half, .third, .sixth {
+		float: left;
+		padding: 2em;
+	}
+		.full {
+			width: 56em;
+		}
+		.five-sixth {
+			width: 46em;
+		}
+		.two-third {
+			width: 36em;
+		}
+		.half {
+			width: 26em;
+		}
+		.third {
+			width: 16em;
+		}
+		.sixth {
+			width: 6em;
+		}
+	
+	/*-----------Header--------------*/
+	
+		#branding-navigation {
+			background-color: white;
+			background-color: rgba(255,255,255,0.9); 
+			position: fixed;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			z-index: 10;
+		}
+			#logo {
+				position: relative;
+				margin: 0;
+				line-height: 0;
+				padding: 1em;
+			}
+			
+			#main-navigation {
+			}
+				#main-navigation ul {
+					padding: 0;
+					margin: 0;
+					font-family: 'Playfair Display', serif;
+				}
+					#main-navigation li {
+						text-align: left;
+						border-bottom: 7px solid #fff;
+					}
+					#main-navigation li:last-child {
+						border-bottom: 0px;
+					}
+						#main-navigation li a {
+							padding: 1em;
+							display: block;
+							color: black;
+							line-height: 20px;
+							position: relative;
+							text-transform: uppercase;
+							font-weight: 300;
+							letter-spacing: 1px;
+						}
+						
+						#main-navigation li a:hover {
+							color: white;
+							background-color: #5fd35f;
+						}
+							#main-navigation li a:hover:after {
+								content: "";
+								position: absolute;
+								right: 1em;
+								width: 20px;
+								height: 20px;
+								background-image: url('kosaya_photography_arrow.png');
+								background-repeat: no-repeat;
+								background-position: center;
+							}
+							
+	/*----------------Slideshow----------------*/
+	
+	/*! http://responsiveslides.com v1.54 by @viljamis */
+
+		#top-slideshow {
+			width: 100%;
+			overflow: hidden;
+			/*min-width: 870px;*/
+			position: relative;
+		}
+
+		.rslides {
+  			position: relative;
+ 			list-style: none;
+  			overflow: hidden;
+  			width: 100%;
+  			padding: 0;
+  			margin: 0;
+  		}
+
+			.rslides li {
+  				-webkit-backface-visibility: hidden;
+ 				position: absolute;
+				display: none;
+				width: 100%;
+				left: 0;
+				top: 0;
+  			}
+
+			.rslides li:first-child {
+  				position: relative;
+  				display: block;
+  				float: left;
+  			}
+
+			.rslides img {
+				position: relative;
+  				display: block;
+  				height: auto;
+  				float: left;
+  				width: 100%;
+  				border: 0;
+  			}
+  	
+  	/*--------------Content-------------------*/
+  	
+  		section.content {
+  			border-bottom: 1px solid black;	
+  			overflow: hidden;
+  		}
+  		
+  		.section-title {
+  			padding-bottom: 0;
+  		}
+  		
+  		.decorated {
+  			position: relative;
+  		}
+  		
+  			.decorated:after {
+  				content: "";
+				background-image: url('decorative_small.png');
+				background-repeat: no-repeat;
+				background-position: center;
+				height: 50px;
+				width: 100%;
+				display: inline-block;
+				position: relative;
+				text-align: center;
+  			}
+  		
+  		/*----------About-----------*/
+  		
+  		#about .half {
+  			float: right;
+  		}
+  		
+			#about .image {
+				position: relative;
+				overflow: hidden;
+			}
+  		
+			#about .image:before {
+				content: "";
+				background-image: url('decorative_white.png');
+				background-repeat: no-repeat;
+				height: 100px;
+				width: 100%;
+				display: block;
+				position: absolute;
+				top: -50px;
+				background-position: center;
+			}
+		
+			#about .image:after {
+				content: "";
+				background-image: url('decorative_white.png');
+				background-repeat: no-repeat;
+				height: 100px;
+				width: 100%;
+				display: block;
+				position: absolute;
+				bottom: -50px;
+				background-position: center;
+			}
+		
+			#about ul {
+				padding-left: 1em;
+				margin-left: 1em;
+				list-style: circle;
+				line-height: 1.7em;
+			}
+		
+		.hi-line {
+			text-transform: none;
+			font-style: italic;
+		}
+  
+  		/*----------Portfolio--------*/
+  		
+  		#portfolio .section-title {
+  			padding-bottom: 2em;
+  		}
+  		
+  		#portfolio-loader {
+  			clear: both;
+  		}
+  
+  		.load {
+  			border-bottom: 5px solid white;
+  			cursor: pointer;
+  		}
+  			.load:hover {
+  				background-color: #efffef;
+  				border-bottom: 5px solid #5fd35f;
+  			}
+  		
+  		.portfolio {
+  			overflow: hidden;
+  			position: relative;
+  			margin-bottom: 3em;
+  		}
+  		.portfolio:before {
+  			content: "";
+			background-image: url('decorative_white.png');
+			background-repeat: no-repeat;
+			background-position: center;
+			height: 90px;
+			width: 100%;
+			display: block;
+			position: absolute;
+			top: -50px;
+			z-index: 3;
+  		}
+  		.portfolio:after {
+  			content: "";
+			background-image: url('decorative_white.png');
+			background-repeat: no-repeat;
+			background-position: center;
+			height: 90px;
+			width: 100%;
+			display: block;
+			position: absolute;
+			bottom: -50px;
+			z-index: 3;
+  		}
+  			.portfolio .item {
+  				width: 25%;
+  				float: left;
+				padding-bottom: 25%;
+				overflow: hidden;
+				position: relative;
+				line-height: 0;
+				cursor: pointer;			
+  			}
+  			.portfolio .item:nth-child(4n+0) {
+  				margin-right: 0;
+  			}
+  			/*Tint on hover*/
+  			.portfolio .item:before {
+  				content: "";
+  				position: absolute;
+  				display: block;
+  				top: 0;
+  				left: 0;
+  				right: 0;
+  				bottom: 0;
+  				background: transparent;
+  				z-index: 1;
+  				transition: all 0.5s;
+  				-webkit-transition: all 0.5s;
+  				-moz-transition: all 0.5s;
+  				-o-transition: all 0.5s;  				
+  			}
+  			
+  				.portfolio .item:nth-child(3n-3):hover:before {
+  					background-color: rgba(95,211,95,0.5);
+  				}
+  				
+  				.portfolio .item:nth-child(3n-2):hover:before {
+  					background-color: rgba(128,229,255,0.5);
+  				}
+  				
+  				.portfolio .item:nth-child(3n-1):hover:before {
+  					background-color: rgba(255,170,204,0.5);
+  				}
+  				
+  				.portfolio .item.clicked:before {
+  					display: none;
+  				}
+  			
+  				.portfolio .item img {
+  					position: absolute;
+  					top: 0;
+  					left: 0;
+  					height: 100%;
+  					width: auto;
+  					max-width: none;
+  				}
+  				
+  			.portfolio .item.clicked {
+  				width: 100%;
+  				padding: 0;
+  			}
+  				.portfolio .item.clicked img {
+  					position: relative;
+  					height: auto;
+  					width: auto;
+  					max-width: 100%;
+  				}
+  				
+		/*----------Contact-----------*/
+		
+		#contact #confirmation {
+			text-align: center;
+		}
+		
+		.success {
+			background: #5fd35f;
+			padding: 1em;
+			color: white;
+		}
+		
+  	/*--------------Footer--------------------*/
+  	
+  		#footer {
+  			text-align: center;
+  			font-family: 'Playfair Display', serif;
+  		}
+  			#footer small {
+  				margin-top: 0.5em;
+  				font-style: italic;
+  			}
+  		
+  	@media screen and (max-width: 1200px) {
+  		
+  		.half, .third {
+  			clear: both;
+  			margin: auto;
+  			float: none !important;
+  		}
+  		
+  		.image {
+			text-align: center;
+		}
+		
+		.full {
+			width: 90%;
+			padding: 5%;
+		}
+  		
+  	}
+  	
+  	
+  	@media screen and (max-width: 900px) {
+  		#branding-navigation {
+			position: relative;
+			left: auto;
+			top: auto;
+			text-align: center;
+			bottom: 0;
+			z-index: 10;
+		}
+			#main-navigation li {
+				text-align: center;
+				border-bottom: 7px solid #fff;
+			}
+
+		body section#top-slideshow {
+			min-width: none !important;
+		}
+	
+		.content {
+			margin-left: auto !important;
+			margin: auto !important;
+		}
+
+		.full, .five-sixth, .two-third, .half, .third, .sixth {
+			width: 90%;
+			padding: 5%;
+		}
+		
+		input, textarea {
+			width: 90% !important;
+		}
+		
+  	}
+  	
+	</style>
+	
+</head>
+
+<body>
+
+	<header id="branding-navigation">
+	
+		<h1 id="logo">
+			<a href="#top"><img src="kosaya_photography_logo_web.png" alt="Kosaya Photography -- Food, Nature & Lifestyle"/></a>
+		</h1>
+	
+		<nav id="main-navigation">
+			<ul>
+				<li><a href="#about">About Me</a></li>
+				<li><a href="#portfolio">Portfolio</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav><!--main-navigation-->
+		
+	</header>
+
+	<div id="top"></div>
+
+	<section id="top-slideshow">
+		<ul class="rslides" id="main-slideshow">
+			<li><img src="images/pestochicken.jpg" alt=""></li>
+			<li><img src="images/mussels2.jpg" alt=""></li>
+			<li><img src="images/lemonpie.jpg" alt=""></li>
+      		<li><img src="images/burger.jpg" alt=""></li>
+      		<li><img src="images/cake07.jpg" alt=""></li>
+      		<li><img src="images/squash.jpg" alt=""></li>
+    	</ul>
+	</section><!--top-slideshow-->
+
+<div id="content-area">
+
+	<section id="about" class="content height-set">
+		<div class="container">
+			
+			<header class="section-title full">
+				<h2>About Me</h2>
+			</header>
+			
+			<div class="half">
+				<div class="image"><img src="images/katie.jpg" alt="Katie Kosaya, food photographer"/></div>
+			</div>
+			
+			<div class="half decorated">
+				<p>Hi, I'm Katie Kosaya.  I love all kinds of photography, but I am particularly passionate about making food look great.  I also love experimenting with old film and polaroid cameras.  It's not uncommon to see me carrying 2-3 different cameras when I'm out and about.</p>  
+				<p>You can see more of my personal/lifestyle photography <a target="_blank" href="http://chestnutmocha.com">at my blog.</a></p>
+				<p>I was born in Ukraine and grew up in Russia, but I currently live in Sandpoint, Idaho with my husband Ben and our little black bunny, Sonya.</p>
+				<p>I enjoy traveling, and I love food. A lot.</p>
+				<hr/>
+				<h3>I've been published in...</h3>
+				<ul>
+					<li>Country Living (Online Feature)</li>
+					<li>Sandpoint Magazine</li>
+					<li>Sandpoint Eats & Drinks Dining Guide</li>
+				</ul>
+				<hr/>
+				<h3>Need food photography?</h3>
+				<p>I'd love to make your restaurant or store's cuisine look perfect!</p>
+				<a class="buttonlink" href="#contact">Contact me!</a>
+			</div>
+		
+		</div>		
+	</section><!--about-->
+	
+	
+	<section id="portfolio" class="content height-set">
+	
+		<div class="container">
+			<header class="section-title full">
+				<h2>Portfolio</h2>
+				<p>Food is my favorite subject.  I love to cook, eat, and make food look delicious.</p>
+			</header>
+		</div>
+		
+		<div id="portfolio-loader">
+			<!--this content can be AJAXed in and out-->
+			<div id="food" class="portfolio">
+				<ul>
+					<li class="item"><img src="images/cake07.jpg" alt=""></li>
+					<li class="item"><img src="images/squash.jpg" alt=""></li>
+					<li class="item"><img src="images/appetizers.jpg" alt=""></li>
+					<li class="item"><img src="images/lemonpie.jpg" alt=""></li>
+					<li class="item"><img src="images/pavlova_white.jpg" alt=""></li>
+					<li class="item"><img src="images/mussels2.jpg" alt=""></li>
+					<li class="item"><img src="images/parsnip-cake.jpg" alt=""></li>
+					<li class="item"><img src="images/pestochicken.jpg" alt=""></li>
+					<li class="item"><img src="images/cocktail.jpg" alt=""></li>
+					<li class="item"><img src="images/jalapenos00.jpg" alt=""></li>
+					<li class="item"><img src="images/tangoburrito.jpg" alt=""></li>
+					<li class="item"><img src="images/fudge.jpg" alt=""></li>
+					
+				</ul>
+			</div>
+			
+		</div>
+		
+	</section><!--portfolio-->
+	
+	
+	<section id="contact" class="content height-set">
+		<div class="container">
+		
+			<header class="section-title full">
+				<h2>Contact Me</h2>
+			</header>
+		
+			<div class="third">
+<p>I currently work at <a href="http://keokee.com" target="_blank">Keokee Co. Publishing</a> and I can be locally contracted through them.</p>
+				<address>
+					Katie Kosaya<br/>
+					(208)920-9025<br/>
+					Sandpoint, Idaho
+				</address>
+			</div>
+		
+			<form id="contact-form" action="process.php" method="POST">	
+			
+				<div class="third">
+					<label for="name">Your Name:</label>
+					<input type="text" name="name"/>
+					<label for="email">Your Email:</label>
+					<input type="text" name="email"/>
+					<label for="phone">Your Phone:</label>
+					<input type="text" name="phone"/>
+					<div style="display: none;"><label for="special">Don't fill this field unless you are a robot:</label>
+					<input type="text" name="special"/></div>
+				</div>
+				
+				<div class="third">
+					
+					<label for="message">Message:</label>
+					<textarea name="message"></textarea>
+					<input type="submit" value="Send" name="submit"/>
+				
+				</div>
+			</form><!--contact-form-->
+		
+			<div class="full decorated">
+				<div id="confirmation"></div>
+			</div>
+		
+			<footer id="footer" class="full">
+				<img src="kosaya_k_logo.png" alt="Kosaya K Logo">
+				<small>All images &copy 2013 Katie Kosaya; not for use without permission.</small>
+			</footer>
+			
+		</div>
+	</section><!--contact-->
+
+</div><!--content-area-->
+
+	<footer id="script-footer">
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/responsiveslides.min.js"></script>
+		<script src="waitforimages.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				
+				//Initialized the slideshow height and sections to the height of the window
+				init_slideshow = $(window).height();
+				if ( $(window).width() > 870 ) {
+					$('#top-slideshow').css({"max-height" : init_slideshow });
+					$('.height-set').css({"min-height" : init_slideshow });
+				}
+				
+				//Initialize pre-loaded portfolio
+ 				initPortfolio();
+ 				
+ 				//Load new portfolios on click
+ 				/*$(".load").click(function() {
+ 					var portfolio_to_load = $(this).data('portfolio');
+ 					console.log(portfolio_to_load);
+ 					loadPortfolio(portfolio_to_load);
+ 				});*/
+ 							
+				//Smooth scrolling -- thanks to Chris Coyier at CSS tricks
+				$(function() {
+ 					$('a[href*=#]:not([href=#])').click(function() {
+    					if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      						var target = $(this.hash);
+      						target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      						if (target.length) {
+        						$('html,body').animate({
+          							scrollTop: target.offset().top
+        						}, 1000);
+        					return false;
+      						}
+    					}
+  					});
+				});
+				
+			});
+			
+			//Ajax
+			$('form#contact-form').submit(function(event) {
+    			var form = $(this);
+				$.ajax({
+					type: form.attr('method'),
+					url: form.attr('action'),
+					data: form.serialize()
+				}).done(function() {
+					// Alert the user of success
+						$('#contact #confirmation').html('<div class="success"><p><strong>Thanks for your interest!</strong></p><p>I\'ll be in touch soon!</p></div>');
+    			}).fail(function() {
+					// Optionally alert the user of an error here...
+					$('#contact #confirmation').html('<div class="error"><p>An error occurred, sorry about that :-(</p><p>Please send me an email the old fashioned way:</p></div>');
+				});
+    		event.preventDefault(); // Prevent the form from submitting via the browser.
+  			});
+			
+		
+			$(function() {
+				//Create the slideshow from the plugin.
+  		  		$("#main-slideshow").responsiveSlides();
+  		  		
+  		  		//Offset the top of the slideshow image to center it vertically.
+  		  		image_height = $(".rslides img").height();
+  		  		slideshow_height = $("#top-slideshow").height();
+  		  		centering_offset = 0-(Math.abs( image_height - slideshow_height )/2);
+  		  		$(".rslides img").css({"top" : centering_offset});
+  		  		
+  		  		//Offset the content from the left menu
+  		  		left_content_margin = $("#branding-navigation").width();
+  		  		$(".content").css({"margin-left" : left_content_margin});
+  		  		
+  			});
+  			
+  			//-----------------------------------Main portfolio initialization function
+  			function initPortfolio() {
+
+				//Initialize vertical images after they have loaded.
+   				$("#portfolio-loader").waitForImages( function() {
+   					
+   					var portfolio_items = $(".portfolio .item img");
+
+    				portfolio_items.each(function () {
+        				var portfolio_item_height = $(this).height();
+        				var portfolio_item_width = $(this).width();
+        				if ( portfolio_item_height > portfolio_item_width ) {
+            				$(this).css({
+                				'width': '100%',
+                    			'height': 'auto',
+								'top': 'auto',
+                    			'bottom': '0'
+            				});
+        				} 
+    				});
+    			
+    				//Click events for portfolio
+					$(".portfolio .item").on('click', function(){
+   						 $(this).addClass('clicked');
+   						 $(this).siblings().removeClass('clicked');
+   						 $(this).parent().prepend(this);
+   						 location.href = "#portfolio-loader";
+ 					}); 				
+ 				
+ 					//downsize portfolio items on menu click
+ 					$("#main-navigation a").click(function() {
+ 						$(".portfolio .item").removeClass('clicked');
+ 					});
+ 				});
+			}
+			
+			//--------------------------------------Portfolio Loading Function
+			function loadPortfolio( portfolio_name ) {
+			
+				var portfolio_url = 'portfolios/'+portfolio_name+'.html';
+				$('#portfolio-loader').html('');
+				$('#portfolio-loader').load(portfolio_url, function() {
+					initPortfolio();
+					//Sanitize gallery list items 
+					$(".portfolio .item").removeClass('clicked');
+				});
+			
+			}
+			
+		</script>
+		
+	</footer><!--script-footer-->
+
+</body>
+
+</html>
